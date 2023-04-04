@@ -8,6 +8,9 @@
     gap: 50px;
     margin: 0 auto;
 }
+.proceed-link{
+    text-decoration: none;
+}
 .btn-proceed{
     display: flex;
     justify-content: space-between;

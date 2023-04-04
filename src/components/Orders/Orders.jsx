@@ -4,6 +4,8 @@ import { Link, useLoaderData } from 'react-router-dom';
 import ReviewItems from '../Review/ReviewItems';
 import './Order.css'
 import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons'
 
 const Orders = () => {
     const savedCart = useLoaderData();
@@ -37,8 +39,11 @@ const Orders = () => {
                 cart={cart}
                 handleClearCart={handleClearCart}
                 >
-                    <Link to="/checkout">
-                        <button className='btn-proceed'>Proceed Checkout</button>
+                    <Link className='proceed-link' to="/checkout">
+                        <button className='btn-proceed'>
+                            <span>Proceed Checkout</span>
+                            <FontAwesomeIcon icon={faCalendarCheck} />
+                            </button>
                     </Link>
                 </Cart>
             </div>
