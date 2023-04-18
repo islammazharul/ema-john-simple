@@ -1,4 +1,4 @@
-.form-container {
+.form-container2 {
     margin: 20px auto;
     width: 500px;
     height: 600px;
@@ -60,4 +60,8 @@
 
 .form-info span {
     color: #FF9900;
+}
+
+.text-error {
+    color: rgb(246, 128, 128);
 }
