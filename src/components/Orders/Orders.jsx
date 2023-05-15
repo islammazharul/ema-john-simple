@@ -9,15 +9,17 @@ import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons'
 
 const Orders = () => {
     const savedCart = useLoaderData();
-    const [cart, setCart] = useState(savedCart)
+    const [cart, setCart] = useState(savedCart);
+
     // console.log(cart)
-    const handleRemoveFromCart = (id)=>{
-        const remaining = cart.filter(product => product.id !== id)
+    const handleRemoveFromCart = (id) => {
+        const remaining = cart.filter(product => product._id !== id)
+        console.log(cart, id);
         setCart(remaining)
         removeFromDb(id)
     }
 
-    const handleClearCart =()=>{
+    const handleClearCart = () => {
         setCart([]);
         deleteShoppingCart()
     }
@@ -28,22 +30,22 @@ const Orders = () => {
             <div className='review-container'>
                 {/* <h2>Product Items: {cart.length}</h2> */}
                 {
-                    cart.map(product => <ReviewItems key={product.id}
-                    product={product}
-                    handleRemoveFromCart={handleRemoveFromCart}
+                    cart.map(product => <ReviewItems key={product._id}
+                        product={product}
+                        handleRemoveFromCart={handleRemoveFromCart}
                     ></ReviewItems>)
                 }
             </div>
             <div className='cart-container'>
-                <Cart 
-                cart={cart}
-                handleClearCart={handleClearCart}
+                <Cart
+                    cart={cart}
+                    handleClearCart={handleClearCart}
                 >
                     <Link className='proceed-link' to="/checkout">
                         <button className='btn-proceed'>
                             <span>Proceed Checkout</span>
                             <FontAwesomeIcon icon={faCalendarCheck} />
-                            </button>
+                        </button>
                     </Link>
                 </Cart>
             </div>

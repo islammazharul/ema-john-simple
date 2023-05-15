@@ -1,17 +1,20 @@
-.shop-container{
+.shop-container {
     display: grid;
     grid-template-columns: 4fr 1fr;
 }
-.product-container{
+
+.product-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
     margin: 0 auto;
 }
-.proceed-link{
+
+.proceed-link {
     text-decoration: none;
 }
-.btn-proceed{
+
+.btn-proceed {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,4 +25,13 @@
     height: 56px;
     font-size: 21px;
     margin: 10px auto;
+}
+
+.pagination {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pagination .selected {
+    background-color: #FF9900;
 }

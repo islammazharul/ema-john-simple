@@ -29,8 +29,8 @@ const Header = () => {
                 <Link to="/signup">Sign Up</Link>
                 {
                     user && <>
-                        <span>Welcome {user.email}</span>
-                        <button onClick={handleSignOut}>Sign Out</button>
+                        <span className='text-user'>Welcome {user.email}</span>
+                        <button onClick={handleSignOut}>Log Out</button>
                     </>
 
                 }
